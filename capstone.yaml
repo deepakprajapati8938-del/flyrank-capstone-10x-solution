@@ -1,0 +1,46 @@
+version: "1.0"
+name: "flyrank-capstone-10x-solution"
+solution_name: "IncidentPulse — Autonomous API Incident Triage & Post-Mortem Engine"
+track: "backend"
+candidate: "Deepak Prajapati"
+brief: "Your 10x Solution"
+
+# 10x Transformation Claim
+claim:
+  baseline: "45 to 60 minutes of manual SRE log scouring, runbook correlation, and post-mortem drafting"
+  solution: "Sub-15ms alert ingestion with automated 15-second background triage, TTL cached diagnosis, and printable post-mortem HTML"
+  speedup: "180x to 240x faster MTTR initiation"
+  cost: "< $0.002 per incident triage ($0.000039 avg observed in probes)"
+
+# Program Concepts Implemented (7 concepts)
+concepts_implemented:
+  - concept_1: "API Endpoints & Input Boundary Validation (FastAPI, Pydantic v2, HTTP 202 Ingest, 422 Rejection)"
+  - concept_2: "Relational Database Persistence (SQLite with WAL Mode, PRAGMA busy_timeout=5000, 6 indexed tables)"
+  - concept_3: "Authentication & Role-Based Access Control (Salted PBKDF2-HMAC-SHA256, Signed JWT Bearer, 403 RBAC)"
+  - concept_4: "Asynchronous Background Jobs & Queue Worker (Decoupled queue drainage off the critical HTTP path)"
+  - concept_5: "Automated Executive Reporting (Structured JSON + Standalone styled printable HTML Post-Mortems)"
+  - concept_6: "Deterministic Signature TTL Caching (SHA-256 error fingerprints, in-memory + SQLite persistent cache)"
+  - concept_7: "Narrow LLM Semantic Grounding & Cost Audit (Runbook correlation, structured output, per-call token ledger)"
+
+# Evaluator Commands
+evaluator_commands:
+  run: "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+  seed: "python seed.py"
+  test: "python run_probes.py"
+  pytest: "pytest -v"
+
+# Service Surface
+base_url: "http://localhost:8000"
+endpoints:
+  root: "/"
+  health: "/health"
+  auth_register: "POST /api/auth/register"
+  auth_login: "POST /api/auth/login"
+  auth_me: "GET /api/auth/me"
+  ingest_alert: "POST /api/incidents/ingest"
+  list_incidents: "GET /api/incidents"
+  get_incident: "GET /api/incidents/{incident_id}"
+  triage_worker: "POST /api/jobs/triage-worker"
+  report_json: "GET /api/incidents/{incident_id}/report"
+  report_html: "GET /api/incidents/{incident_id}/report.html"
+  ai_costs: "GET /api/costs"
