@@ -32,7 +32,7 @@ IncidentPulse is built with **Python, FastAPI, SQLite, and Pydantic v2**, struct
 ### Plain-Words System Flow:
 1. **Authentication & Ingestion**: Clients authenticate using secure JWT Bearer tokens. An alert webhook (`POST /api/incidents/ingest`) accepts the error trace, service name, and severity. Input is strictly validated using Pydantic schemas, persisted to SQLite, and returns an immediate `202 Accepted` response in `< 15ms`.
 2. **Asynchronous Background Processing**: Slow diagnostic work is handled off the request path by a durable worker (`process_incident_queue`).
-3. **Signature Caching**: The engine computes a deterministic MD5 fingerprint of the exception stack trace. If the same error occurred recently, a TTL cache returns the stored diagnosis in `0ms`, saving 100% of LLM compute costs.
+3. **Signature Caching**: The engine computes a deterministic SHA-256 fingerprint of the exception stack trace. If the same error occurred recently, a TTL cache returns the stored diagnosis in `0ms`, saving 100% of LLM compute costs.
 4. **Structured AI Root-Cause Analysis**: On a cache miss, a narrow AI triage module analyzes the stack trace, assesses severity, outputs concrete mitigation steps, and validates the output against a strict Pydantic model (`IncidentTriageAnalysis`). Every AI call logs tokens and micro-dollar costs into a dedicated audit table.
 5. **Executive Reporting**: The system compiles all metrics, timeline events, AI findings, and action items into a styled, professional Executive Post-Mortem report accessible via `GET /api/incidents/{id}/report`.
 
