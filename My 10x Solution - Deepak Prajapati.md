@@ -40,7 +40,7 @@ IncidentPulse is built with **Python, FastAPI, SQLite, and Pydantic v2**, struct
 
 ## The Program Concepts Implemented
 
-IncidentPulse implements **6 Core Program Concepts** (exceeding the required 5, with 0 swaps needed):
+IncidentPulse implements all **7 Core Program Concepts** (exceeding the required 5, with 0 swaps needed):
 
 | # | Concept | Where It Lives in the Code | Architectural Function |
 | :-: | :--- | :--- | :--- |
@@ -77,7 +77,7 @@ python seed.py
 ```
 
 ### 3. Run Acceptance Probes & Tests
-Validates all 6 core concepts end-to-end:
+Validates all 7 concepts end-to-end:
 ```bash
 python run_probes.py
 # Or run with pytest:
