@@ -98,3 +98,4 @@ def process_incident_queue(batch_size: int = 10, db_path: str = DATABASE_PATH) -
         })
 
     return stats
+

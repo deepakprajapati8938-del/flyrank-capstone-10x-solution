@@ -148,3 +148,4 @@ def get_cost_summary(db_path: str = DATABASE_PATH) -> Dict[str, Any]:
         "by_operation": by_op,
         "recent_logs": recent
     }
+

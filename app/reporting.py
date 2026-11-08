@@ -220,3 +220,4 @@ def generate_incident_report(incident_id: str, db_path: str = DATABASE_PATH) -> 
         "html_url": f"/api/incidents/{incident_id}/report.html",
         "generated_at": now_iso
     }
+

@@ -20,3 +20,4 @@ CACHE_TTL_SECONDS = int(os.getenv("CACHE_TTL_SECONDS", "300"))
 # AI Provider Configuration ($0 / Free Tier with Deterministic Fallback)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 AI_MODEL_NAME = os.getenv("AI_MODEL_NAME", "gemini-1.5-flash")
+

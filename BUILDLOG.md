@@ -62,3 +62,4 @@ Heavy PDF rendering engines (like WeasyPrint or wkhtmltopdf) require external C 
 | **Phase 4: LLM & Reporting** | 3.5h | Runbook correlation, Pydantic validation, micro-cost ledger, HTML post-mortem | `app/llm_triage.py`, `app/reporting.py`, `app/main.py` |
 | **Phase 5: Verification & Harness** | 2.5h | Seed script, automated acceptance probes, pytest suite, test evidence | `seed.py`, `run_probes.py`, `tests/`, `EVIDENCE.md` |
 | **Total Workload** | **15.0h** | Fully built, end-to-end verified 10x solution | **100% Complete** |
+

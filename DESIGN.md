@@ -85,3 +85,4 @@ IncidentPulse implements **6 Core Program Concepts** (exceeding the required 5, 
 - Not an APM agent monitoring server CPU/RAM metrics in real time.
 - Not an SMS/PagerDuty on-call escalation paging network.
 - Focus is strictly on post-incident ingestion, root-cause diagnosis, caching, and executive post-mortem reporting.
+

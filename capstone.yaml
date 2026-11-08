@@ -44,3 +44,4 @@ endpoints:
   report_json: "GET /api/incidents/{incident_id}/report"
   report_html: "GET /api/incidents/{incident_id}/report.html"
   ai_costs: "GET /api/costs"
+

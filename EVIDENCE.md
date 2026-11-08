@@ -128,3 +128,4 @@ tests/test_acceptance_probes.py::test_concept_7_llm_triage_and_cost_logging PASS
 - [x] **No Real Credit Cards**: Completely zero cost (\$0 stack).
 - [x] **Timing Attack Prevention**: Uses `hmac.compare_digest` for password verification.
 - [x] **Offline Evaluation**: Deterministic fallback and heuristic pattern matching allows full evaluation even without live internet.
+

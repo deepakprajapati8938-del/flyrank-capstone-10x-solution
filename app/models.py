@@ -104,3 +104,4 @@ class CostSummaryResponse(BaseModel):
     total_cost_usd: float
     by_operation: Dict[str, Any]
     recent_logs: List[CostLogEntry]
+
